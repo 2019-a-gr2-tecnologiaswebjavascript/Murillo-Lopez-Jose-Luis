@@ -1,6 +1,19 @@
-<h1 class="rojo">Item galeria - {{title}}</h1>
-
+<h1 [class]="color">Item galeria - {{title}}</h1>
+<!--Las boble llaves '{}' se llaman interpolación-->
 <p>Nombre: {{nombreItem}}</p>
 
 <!-- EVENT BINDING() -> Evento-->
-<button (click)="alertar()"> {{textoBoton}} </button>
+<button (click)="alertar()">
+    {{textoBoton}}
+</button>
+
+<!--Proper-->
+<img [src]="url" alt =""
+(click)="cambiarImagen()">
+
+{{notas}}
+
+<!--Directiva -> *ngFor-->
+<p *ngFor="let nota of notas">
+    {{nota}}
+</p>
