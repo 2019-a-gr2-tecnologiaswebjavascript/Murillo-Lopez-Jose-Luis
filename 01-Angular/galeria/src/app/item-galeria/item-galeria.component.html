@@ -1,4 +1,4 @@
-<h1 [class]="color">Item galeria - {{title}}</h1>
+<h1 [class]="color">Tienda: {{titulo}}</h1>
 <!--Las boble llaves '{}' se llaman interpolación-->
 <p>Nombre: {{nombreItem}}</p>
 
@@ -14,6 +14,8 @@
 {{notas}}
 
 <!--Directiva -> *ngFor-->
-<p *ngFor="let nota of notas">
-    {{nota}}
-</p>
+<div *ngFor="let nota of notas">
+    <button (click)="agregarCarrito(nota)">
+        Anadir: {{nota}}
+    </button>
+</div>
