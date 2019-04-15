@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnDestroy } from '@angular/core';
+import { CarritoService } from '../servicios/carrito/carrito.service';
 
 
 @Component({
@@ -6,9 +7,12 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   templateUrl: './item-galeria.component.html',
   styleUrls: ['./item-galeria.component.css']
 })
-export class ItemGaleriaComponent implements OnInit {
+export class ItemGaleriaComponent implements OnInit, OnDestroy {
 
   title = "Licoreria";
+
+  @Input()
+  titulo;
 
   @Input()
   textoBoton;
@@ -24,13 +28,33 @@ export class ItemGaleriaComponent implements OnInit {
 
   url = "https://http2.mlstatic.com/biela-de-motor-original-peugeot-207-14-nafta-D_NQ_NP_782765-MLA26076182164_092017-F.jpg"
 
-  notas = [1,2,3,4,5,6,7,8,9,10];
+  @Input()
+  notas;
 
   color = "rojo"
 
-  constructor() { }
+  //Dependency
+  //Injection
+  constructor(private readonly _carritoService:CarritoService) { //ModificadorDeAcceso, inmutabilidad, alias:tipoDeDato 
+    
+  }
 
   ngOnInit() {
+    console.log("Empezo");
+    console.log(this._carritoService.carritoCompras);
+  }
+
+  ngOnDestroy(){
+    console.log('Terminó');
+  }
+
+  agregarCarrito(valorCarrito){
+    const itemCarrito = {
+      valor : valorCarrito,
+      nombreTienda: this.titulo
+    };
+    this._carritoService.carritoCompras.splice(0,0,itemCarrito);
+    console.log(this._carritoService.carritoCompras);
   }
 
   alertar(){
@@ -83,3 +107,6 @@ class Usuario{
 
 }
 */
+
+
+
