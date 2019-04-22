@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, OnDestroy } from '@angular/core';
 import { CarritoService } from '../servicios/carrito/carrito.service';
+import { ItemCarritoCompras } from '../interfaces/item-carrito-compras';
 
 
 @Component({
@@ -48,13 +49,13 @@ export class ItemGaleriaComponent implements OnInit, OnDestroy {
     console.log('Terminó');
   }
 
-  agregarCarrito(valorCarrito){
-    const itemCarrito = {
+  agregarCarrito(valorCarrito:String){
+    const itemCarrito : ItemCarritoCompras = {
       valor : valorCarrito,
       nombreTienda: this.titulo
     };
-    this._carritoService.carritoCompras.splice(0,0,itemCarrito);
-    console.log(this._carritoService.carritoCompras);
+    const respuestaCarrito = this._carritoService.agregarCarritoDeCompras(itemCarrito);
+    console.log(respuestaCarrito);
   }
 
   alertar(){
@@ -82,6 +83,16 @@ export class ItemGaleriaComponent implements OnInit, OnDestroy {
 }
 
 }
+
+
+
+/*
+class CarritoComprasClass implements CarritoComprasInterface{
+  valor:String;
+  nombreTienda:String;
+  fechaCompra?:Date;
+}
+*/
 
 /*
 @DecoratorsClase() //->Funciones que se ejecutan antes de clases, atributos, constructores, metodos
