@@ -31,7 +31,8 @@ export class AppComponent {
       descripcion:"Gorditas",
       notas: [
         'Motes',
-        'Fritada'
+        'Fritada',
+        'Papitas'
       ]
     }
   ]
