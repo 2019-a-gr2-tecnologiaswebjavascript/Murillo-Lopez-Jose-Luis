@@ -7,9 +7,10 @@ export class CarritoService {
     
     agregarCarritoDeCompras(itemCarrito:ItemCarritoCompras):ItemCarritoCompras[]{
         const identificador = itemCarrito.valor;
+        const tienda = itemCarrito.nombreTienda;
         let indiceItem = -1;
         const existeElItem = this.carritoCompras.some((item:ItemCarritoCompras,indice)=>{
-            if(item.valor==identificador){
+            if(item.valor==identificador && item.nombreTienda==tienda){
                 indiceItem = indice;
                 return true;
             }else{
