@@ -1,0 +1,7 @@
+{
+  "name": "mc-donalds",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
