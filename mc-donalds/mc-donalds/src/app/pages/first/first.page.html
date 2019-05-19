@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <img src="//upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/120px-McDonald%27s_Golden_Arches.svg.png" alt="icon" height="30px">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-slides [options]="sliderOpts" pager>
+    <ion-slide *ngFor="let img of [1, 2, 3]">
+      <img src="assets/img/{{ img }}.png" tappable>
+    </ion-slide>
+  </ion-slides>
+
+  <ion-button expand="full" color="danger">
+    <ion-icon slot="start">
+      <img src="assets/icon/coupons.png" alt="">
+    </ion-icon>
+    Cupones
+  </ion-button>
+
+  <ion-button expand="full" routerLink="/menu/second" color="danger">
+    <ion-icon slot="start">
+      <img src="assets/icon/rest.png" alt="">
+    </ion-icon>
+    Restaurantes
+  </ion-button>
+
+  <ion-button expand="full" color="danger">
+    <ion-icon slot="start">
+      <img src="assets/icon/menu.png" alt="">
+    </ion-icon>
+    Menu
+  </ion-button>
+</ion-content>
