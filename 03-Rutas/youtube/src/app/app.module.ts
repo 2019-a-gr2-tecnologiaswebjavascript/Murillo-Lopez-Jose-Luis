@@ -7,6 +7,7 @@ import { RutaHomeComponent } from './rutas/ruta-home/ruta-home.component';
 import { RutaTendenciasComponent } from './rutas/ruta-tendencias/ruta-tendencias.component';
 import { RutaSuscripcionesComponent } from './rutas/ruta-suscripciones/ruta-suscripciones.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
