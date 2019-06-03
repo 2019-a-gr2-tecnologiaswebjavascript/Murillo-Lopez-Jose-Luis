@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AutoresServiceService } from 'src/app/servicios/autores/autores-service.service';
 import { Router } from '@angular/router';
+import { LibrosServiceService } from 'src/app/servicios/libros/libros-service.service';
 
 @Component({
   selector: 'app-ruta-grupos',
@@ -10,7 +11,8 @@ import { Router } from '@angular/router';
 export class RutaGruposComponent implements OnInit {
 
   constructor(private readonly _autores : AutoresServiceService,
-    private readonly _router : Router) { }
+    private readonly _router : Router,
+    private readonly _libros : LibrosServiceService) { }
 
   autores = this._autores.autores
 
@@ -21,6 +23,14 @@ export class RutaGruposComponent implements OnInit {
 
   eliminarAutor(id){
     this._autores.autores.splice(id,1)
+    this._libros.libros = this._libros.libros.filter(libro => libro.idAutor != id)
+    this._libros.libros.map(
+      (libro) => {
+        if(libro.idAutor > id){
+          libro.idAutor = libro.idAutor - 1
+        }
+      }
+    )
   }
 
   toProducts(id){

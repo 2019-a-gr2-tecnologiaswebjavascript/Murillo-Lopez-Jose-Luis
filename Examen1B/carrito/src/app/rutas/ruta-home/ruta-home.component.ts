@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-ruta-home',
@@ -8,7 +8,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class RutaHomeComponent implements OnInit {
 
-  constructor(private readonly _activatedRoute:ActivatedRoute) { }
+  constructor(private readonly _activatedRoute:ActivatedRoute,
+    private readonly _router: Router) { }
 
   nombreUsuario = ''
 
@@ -16,9 +17,18 @@ export class RutaHomeComponent implements OnInit {
     const parametros$ = this._activatedRoute.queryParams
     parametros$.subscribe(
       (parametros)=>{
-        this.nombreUsuario = parametros.nombreUsuario
+        this.nombreUsuario = parametros.nombre
       }
     )
+  }
+
+  irAComprar(){
+    var parametros={
+      queryParams:{
+        'nombreUsuario':this.nombreUsuario
+      }
+    }
+    this._router.navigate(['cajero'],parametros)
   }
 
 }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { LibrosServiceService } from 'src/app/servicios/libros/libros-service.service';
+import { CarritoComprasService } from 'src/app/servicios/carrito-compras/carrito-compras.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-ruta-cajero',
@@ -7,9 +10,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RutaCajeroComponent implements OnInit {
 
-  constructor() { }
+  nombre
+  ci
+  direccion
+  telefono
+  correo
+
+  nombreUsuario
+
+  carrito = this._carrito.detalleCarrito
+  productos = this._libros.libros
+
+  costoTotal = this._carrito.costoTotal[0]
+
+  constructor(private readonly _libros : LibrosServiceService,
+  private readonly _carrito : CarritoComprasService,
+  private readonly _activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    const parametros$ = this._activatedRoute.queryParams
+    parametros$.subscribe(
+      (parametros)=>{
+        this.nombreUsuario = parametros.nombreUsuario
+      }
+    )
   }
+
+  agregarAlCarrito(producto){
+    this._carrito.insertarAlCarrito(producto)
+  }
+
+  quitarDelCarrito(producto){
+    this._carrito.quitarCarrito(producto)
+  }
+
 
 }

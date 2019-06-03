@@ -21,7 +21,7 @@
           <td>{{libro.fecha}}</td>
           <td>{{libro.editorial}}</td>
           <td>
-              <button (click)="eliminarLibro(this)">Eliminar</button>
+              <button (click)="eliminarLibros(libros.indexOf(libro))">Eliminar</button>
           </td>
       </tr>
   </table>

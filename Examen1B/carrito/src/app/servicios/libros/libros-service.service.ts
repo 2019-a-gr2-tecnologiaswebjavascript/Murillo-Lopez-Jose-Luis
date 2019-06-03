@@ -40,7 +40,7 @@ export class LibrosServiceService {
       edicion: 3,
       fecha: '02/06/1943',
       editorial: 'Paneta',
-      idAutor: 2
+      idAutor: 1
     },
     {
       icbn: 5,
@@ -49,7 +49,7 @@ export class LibrosServiceService {
       edicion: 2,
       fecha: '02/06/1909',
       editorial: 'Paneta',
-      idAutor: 3
+      idAutor: 2
     }, 
     {
       icbn: 6,
@@ -58,7 +58,7 @@ export class LibrosServiceService {
       edicion: 1,
       fecha: '02/06/1603',
       editorial: 'Paneta',
-      idAutor: 4
+      idAutor: 3
     },
     {
       icbn: 7,
@@ -67,7 +67,7 @@ export class LibrosServiceService {
       edicion: 1,
       fecha: '02/06/1863',
       editorial: 'Santillana',
-      idAutor: 4
+      idAutor: 3
     }
   ]
 

@@ -62,4 +62,14 @@ export class RutaProductosComponent implements OnInit {
   
   }
 
+  eliminarLibros(index){
+    var aux = this._libros.libros.filter( libro => libro.idAutor == this.idAutor)[index]
+    var newIndex = this._libros.libros.indexOf(aux)
+    console.log(newIndex)
+    this._libros.libros.splice(newIndex,1)
+    this.ngOnInit()
+    console.log(this._libros.libros)
+  }
+
+
 }
