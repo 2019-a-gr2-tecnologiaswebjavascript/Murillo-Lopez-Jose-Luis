@@ -21,22 +21,37 @@ const routes: Routes = [
   {
     path: 'grupos',
     component: RutaGruposComponent,
+    canActivate:[
+      AuthService
+    ]
   },
   {
     path: 'productos',
-    component: RutaProductosComponent
+    component: RutaProductosComponent,
+    canActivate:[
+      AuthService
+    ]
   },
   {
     path: 'nuevo-grupo',
-    component: RutaGruposNuevoComponent
+    component: RutaGruposNuevoComponent,
+    canActivate:[
+      AuthService
+    ]
   },
   {
     path: 'nuevo-producto',
-    component: RutaProductosNuevoComponent
+    component: RutaProductosNuevoComponent,
+    canActivate:[
+      AuthService
+    ]
   },
   {
     path: 'cajero',
-    component: RutaCajeroComponent
+    component: RutaCajeroComponent,
+    canActivate:[
+      AuthService
+    ]
   },
   {
     path: 'compras',

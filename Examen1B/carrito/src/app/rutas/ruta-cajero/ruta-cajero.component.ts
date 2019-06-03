@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LibrosServiceService } from 'src/app/servicios/libros/libros-service.service';
 import { CarritoComprasService } from 'src/app/servicios/carrito-compras/carrito-compras.service';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-ruta-cajero',
@@ -25,7 +26,8 @@ export class RutaCajeroComponent implements OnInit {
 
   constructor(private readonly _libros : LibrosServiceService,
   private readonly _carrito : CarritoComprasService,
-  private readonly _activatedRoute: ActivatedRoute) { }
+  private readonly _activatedRoute: ActivatedRoute,
+  private readonly _location: Location) { }
 
   ngOnInit() {
     const parametros$ = this._activatedRoute.queryParams
@@ -42,6 +44,18 @@ export class RutaCajeroComponent implements OnInit {
 
   quitarDelCarrito(producto){
     this._carrito.quitarCarrito(producto)
+  }
+
+  finalizarCompra(){
+    var cliente = [{
+      'nombre':this.nombre,
+      'ci':this.ci,
+      'direccion':this.direccion,
+      'telefono':this.telefono,
+      'correo':this.correo
+    }]
+    this._carrito.finalizarCompra(cliente, this.nombreUsuario)
+    this._location.back()
   }
 
 

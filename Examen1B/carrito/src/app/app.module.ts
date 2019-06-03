@@ -17,6 +17,7 @@ import { LibrosServiceService } from './servicios/libros/libros-service.service'
 import { RutaGruposNuevoComponent } from './rutas/ruta-grupos-nuevo/ruta-grupos-nuevo.component';
 import { RutaProductosNuevoComponent } from './rutas/ruta-productos-nuevo/ruta-productos-nuevo.component';
 import { CarritoComprasService } from './servicios/carrito-compras/carrito-compras.service';
+import { VentasService } from './servicios/ventas.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { CarritoComprasService } from './servicios/carrito-compras/carrito-compr
     EstaLogeadoService,
     AutoresServiceService,
     LibrosServiceService,
-    CarritoComprasService
+    CarritoComprasService,
+    VentasService
   ],
   bootstrap: [AppComponent]
 })

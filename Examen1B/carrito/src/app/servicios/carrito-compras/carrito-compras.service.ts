@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { VentasService } from '../ventas.service';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,7 @@ export class CarritoComprasService {
 
   detalleCarrito = []
 
-  constructor() { }
+  constructor(private readonly _ventas:VentasService) { }
 
   costoTotal = [{
     'carrito': this.detalleCarrito,
@@ -78,6 +79,18 @@ export class CarritoComprasService {
     })
     console.log('Total ',this.costoTotal[0])
     this.costoTotal[0].precioTotal = costo
+  }
+
+  finalizarCompra(cliente, cajero){
+    var venta = [
+      {
+        'cliente':cliente,
+        'pedido':this.costoTotal,
+        'cajero':cajero
+      }
+    ]
+    console.log(venta)
+    this._ventas.ventas.push(venta)
   }
 
 }
