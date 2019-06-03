@@ -12,93 +12,14 @@
   
         <div class="row">
           <div class="col-lg-1"></div>
-          
-          <div class="col-lg-2 video-cell">
-            <div class="row">
-              <img src="https://i.ytimg.com/vi/OGca96afgtM/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLCHzhqI5NsplVESFa7Mh5z3ewcKKA" alt="" width="100%">
-            </div>
-            <div class="row video-titles">
-                SONIC LA PELÍCULA Tráiler Español Latino DOBLADO (2019)
-            </div>
-            <div class="row video-info">
-                SensaCine TRAILERS
-            </div>
-            <div class="row video-info">
-                9,2 M visualizaciones
-            </div>
-            <div class="row video-info">
-                Hace 6 días
-            </div>
-          </div>
-          <div class="col-lg-2 video-cell">
-            <div class="row">
-              <img src="https://i.ytimg.com/vi/MRtvGj-XEH0/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBTAalqfOiW2RenMZ2zn5vTqh1MsA" alt="" width="100%">
-            </div>
-            <div class="row video-titles">
-                FC Barcelona - Liverpool [3-0] | GOLES | Semifinal (IDA) | UEFA Champions League
-            </div>
-            <div class="row video-info">
-                FOX Sports Sur
-            </div>
-            <div class="row video-info">
-                7,1 M visualizaciones
-            </div>
-            <div class="row video-info">
-                Hace 4 días
-            </div>
-          </div>
-          <div class="col-lg-2 video-cell">
-            <div class="row">
-              <img src="https://i.ytimg.com/vi/sWK6eBYGZBM/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLB0KL7HAVc123O5l5nLuvdQoQKukA" alt="" width="100%">
-            </div>
-            <div class="row video-titles">
-                Becky G, Maluma - La Respuesta (Official Video)
-            </div>
-            <div class="row video-info">
-                Becky G
-            </div>
-            <div class="row video-info">
-                57 M visualizaciones
-            </div>
-            <div class="row video-info">
-                Hace 2 semanas
-            </div>
-          </div>
-          <div class="col-lg-2 video-cell">
-            <div class="row">
-              <img src="https://i.ytimg.com/vi/8cG1aVT-M-A/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBbLiKfsTuwrJx5OVcM9wHGAvXyNA" alt="" width="100%">
-            </div>
-            <div class="row video-titles">
-                VENOM 2: CARNAGE (2020) Woody Harrelson Movie - Trailer Concept (HD)
-            </div>
-            <div class="row video-info">
-                Billy Crammer
-            </div>
-            <div class="row video-info">
-                6,9 M visualizaciones
-            </div>
-            <div class="row video-info">
-                Hace 6 horas
-            </div>
-          </div>
-          <div class="col-lg-2 video-cell">
-            <div class="row">
-              <img src="https://i.ytimg.com/vi/YkF4w6w27W0/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBBnSR3KFGYAoI_87kKsg3hbG-PXw" alt="" style="width: 100%">
-            </div>
-            <div class="row video-titles">
-                SPIDER-MAN LEJOS DE CASA Tráiler Español DOBLADO (2019)
-            </div>
-            <div class="row video-info">
-                SensaCine TRAILERS
-            </div>
-            <div class="row video-info">
-                4 M visualizaciones
-            </div>
-            <div class="row video-info">
-                Hace 3 horas
-            </div>
-          </div>
-  
+          <app-feed-video class="col-lg-2 video-cell"
+            *ngFor="let video of arregloVideosTendencias"
+            [miniatura]="video.miniatura"
+            [titulo]="video.titulo"
+            [usuario]="video.usuario"
+            [visualizaciones]="video.visualizaciones"
+            [fecha]="video.fecha"
+          ></app-feed-video>  
           <div class="col-lg-1"></div>
         </div>
         <div class="row">
@@ -109,95 +30,16 @@
             <div class="col-lg-1"></div>
           </div>
     
-          <div class="row" style="width: 100%">
+          <div class="row">
             <div class="col-lg-1"></div>
-            
-            <div class="col-lg-2 video-cell">
-              <div class="row">
-                <img src="https://i.ytimg.com/vi/prrn2PZ5FWY/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDfHQ9XI86LGSXROqTyEj04lYRh9g" alt="" style="width: 100%">
-              </div>
-              <div class="row video-titles">
-                  La Bella y La Bestia | #TeLoResumoAsiNomas 240
-              </div>
-              <div class="row video-info">
-                  Te lo resumo
-              </div>
-              <div class="row video-info">
-                  876 mil visualizaciones
-              </div>
-              <div class="row video-info">
-                  Hace 2 días
-              </div>
-            </div>
-            <div class="col-lg-2 video-cell">
-              <div class="row">
-                <img src="https://i.ytimg.com/vi/KDI0hNDjJXg/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLA203n-mtvj92RzhvXnbgJJ8YA6ag" alt="" style="width: 100%">
-              </div>
-              <div class="row video-titles">
-                  Augmented Images Setup | ARCore
-              </div>
-              <div class="row video-info">
-                  Hey! Let's Code
-              </div>
-              <div class="row video-info">
-                  1,4 mil visualizaciones
-              </div>
-              <div class="row video-info">
-                  Hace 4 meses
-              </div>
-            </div>
-            <div class="col-lg-2 video-cell">
-              <div class="row">
-                <img src="https://i.ytimg.com/vi/hb1fepHU_Jg/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAQo0KPM37VsMn4Hb7U3oDyd1Tvxg" alt="" style="width: 100%">
-              </div>
-              <div class="row video-titles">
-                  Dragon Ball Z - Best Music Part 2 HD
-              </div>
-              <div class="row video-info">
-                  Yahren
-              </div>
-              <div class="row video-info">
-                  79 mil visualizaciones
-              </div>
-              <div class="row video-info">
-                  Hace 1 mes
-              </div>
-            </div>
-            <div class="col-lg-2 video-cell">
-              <div class="row">
-                <img src="https://i.ytimg.com/vi/xo9GgWfdymI/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLAJtL-fZLC2MZHMIWrbAWLkLoAYJA" alt="" style="width: 100%">
-              </div>
-              <div class="row video-titles">
-                  EL BANANERO - LA VIDA DESPUES DEL TRAILERAZO
-              </div>
-              <div class="row video-info">
-                  EL BANANERO OFICIAL
-              </div>
-              <div class="row video-info">
-                  6,4 M visualizaciones
-              </div>
-              <div class="row video-info">
-                  Hace 3 años
-              </div>
-            </div>
-            <div class="col-lg-2 video-cell">
-              <div class="row">
-                <img src="https://i.ytimg.com/vi/rPFGWVKXxm0/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLD9lMoCQvJz8uF8HDlk5n0_FK28og" alt="" style="width: 100%">
-              </div>
-              <div class="row video-titles">
-                  The Rolling Stones -- Doom And Gloom (Lyric Video)
-              </div>
-              <div class="row video-info">
-                  The Rolling Stones
-              </div>
-              <div class="row video-info">
-                  20 M visualizaciones
-              </div>
-              <div class="row video-info">
-                  Hace 6 años
-              </div>
-            </div>
-    
+            <app-feed-video class="col-lg-2 video-cell"
+            *ngFor="let video of arregloVideosRecomendados"
+            [miniatura]="video.miniatura"
+            [titulo]="video.titulo"
+            [usuario]="video.usuario"
+            [visualizaciones]="video.visualizaciones"
+            [fecha]="video.fecha"
+          ></app-feed-video> 
             <div class="col-lg-1"></div>
           </div>
       

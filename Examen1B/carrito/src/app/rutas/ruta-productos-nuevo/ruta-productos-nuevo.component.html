@@ -1,0 +1,22 @@
+<div>
+  <form
+    #formularioUsuario="ngForm"
+    novalidate
+  >
+    <label for="icbn"></label>
+    <input id="icbn" name="icbnUsuario" type="number" placeholder="ICBN" [(ngModel)]="icbn">
+    <label for="nombre"></label>
+    <input id="nombre" name="nombreUsuario" type="text" placeholder="Nombre" [(ngModel)]="nombre">
+    <label for="numero"></label>
+    <input id="numero" name="numeroUsuario" type="number" placeholder="Número de páginas" [(ngModel)]="numero">
+    <label for="edicion"></label>
+    <input id="edicion" name="edicionUsuario" type="number" placeholder="edicion de libros" [(ngModel)]="edicion">
+    <label for="fecha"></label>
+    <input id="fecha" name="fechaUsuario" type="text" placeholder="Fecha" [(ngModel)]="fecha">
+    <label for="editorial"></label>
+    <input id="editorial" name="editorialUsuario" type="text" placeholder="Editorial" [(ngModel)]="editorial">
+    <button (click)="register()">Entrar</button>
+  </form>
+  
+  
+</div>

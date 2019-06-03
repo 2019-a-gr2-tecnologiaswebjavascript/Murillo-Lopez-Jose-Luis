@@ -1,0 +1,28 @@
+<div>
+    <input type="text" id="busqueda" (keyup)="search()" placeholder="Buscar por nombre">
+
+    <button id="boton" routerLink='/nuevo-grupo'>Crear</button>
+
+    <table id="tabla">
+        <tr>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Fecha de nacimiento</th>
+            <th>Numero de libros</th>
+            <th>Ecuatoriano</th>
+            <th>Acciones</th>
+        </tr>
+        <tr *ngFor="let autor of autores">
+            <td>{{autor.nombre}}</td>
+            <td>{{autor.apellido}}</td>
+            <td>{{autor.fechaNac}}</td>
+            <td>{{autor.libros}}</td>
+            <td>{{autor.ecuatoriano}}</td>
+            <td>
+                <button (click)="eliminarAutor(autores.indexOf(autor))">Eliminar</button>
+                <button (click)="toProducts(autores.indexOf(autor))">Libros</button>
+            </td>
+        </tr>
+    </table>
+
+</div>

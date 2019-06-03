@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { RutaHomeComponent } from './rutas/ruta-home/ruta-home.component';
 import { RutaTendenciasComponent } from './rutas/ruta-tendencias/ruta-tendencias.component';
 import { RutaSuscripcionesComponent } from './rutas/ruta-suscripciones/ruta-suscripciones.component';
+import { FeedVideoComponent } from './feed-video/feed-video.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { RutaSuscripcionesComponent } from './rutas/ruta-suscripciones/ruta-susc
     AppComponent,
     RutaHomeComponent,
     RutaTendenciasComponent,
-    RutaSuscripcionesComponent
+    RutaSuscripcionesComponent,
+    FeedVideoComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,19 @@
+<div>
+  <form
+    #formularioUsuario="ngForm"
+    novalidate
+  >
+    <label for="nombre"></label>
+    <input id="nombre" name="nombreUsuario" type="text" placeholder="Nombre" [(ngModel)]="nombre">
+    <label for="apellido"></label>
+    <input id="apellido" name="apellidoUsuario" type="text" placeholder="Apellido" [(ngModel)]="apellido">
+    <label for="fecha"></label>
+    <input id="fecha" name="fechaUsuario" type="text" placeholder="Fecha de Nacimiento" [(ngModel)]="fecha">
+    <label for="numero"></label>
+    <input id="numero" name="numeroUsuario" type="number" placeholder="Numero de libros" [(ngModel)]="numero">
+    <label for="ecuatoriano">Ecuatoriano</label>
+    <input id="ecuatoriano" name="ecuatorianoUsuario" type="checkbox" [(ngModel)]="ecuatoriano">
+  </form>
+  
+  <button (click)="register()">Entrar</button>
+</div>

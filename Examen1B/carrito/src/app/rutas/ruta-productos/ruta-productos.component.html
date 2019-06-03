@@ -1,0 +1,29 @@
+<div>
+  <input type="text" id="busqueda" (keyup)="search()" placeholder="Buscar por nombre">
+
+  <button id="boton" (click)="irAInsertar()">Crear</button>
+
+  <table id="tabla">
+      <tr>
+          <th>ICBN</th>
+          <th>Nombre</th>
+          <th>Número de páginas</th>
+          <th>Edición</th>
+          <th>Fecha de publicación</th>
+          <th>Nombre de la editorial</th>
+          <th>Acciones</th>
+      </tr>
+      <tr *ngFor="let libro of libros">
+          <td>{{libro.icbn}}</td>
+          <td>{{libro.nombre}}</td>
+          <td>{{libro.numero}}</td>
+          <td>{{libro.edicion}}</td>
+          <td>{{libro.fecha}}</td>
+          <td>{{libro.editorial}}</td>
+          <td>
+              <button (click)="eliminarLibro(this)">Eliminar</button>
+          </td>
+      </tr>
+  </table>
+
+</div>
