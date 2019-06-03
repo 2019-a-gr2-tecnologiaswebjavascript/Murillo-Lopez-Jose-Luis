@@ -1,1 +1,157 @@
 /* You can add global styles to this file, and also import other style files */
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+.header {
+    padding: 5px;
+    border-bottom: 1px gray solid;
+    height: 50px;
+    width: 100%;
+    background: white;
+    overflow: hidden;
+}
+
+.tipo-boton{
+    cursor: pointer;
+}
+
+.expanded-sidebar{
+    height: 100%;
+}
+
+.center-align{
+    text-align:center; 
+    vertical-align: middle;
+}
+
+.left-align{
+    text-align: left;
+    vertical-align: middle;
+}
+
+.item-list{
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.item-list-title{
+    padding: 4%;
+    font-weight: bold;
+}
+
+.item-list:hover{
+    background-color: #d3d3d3;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.section{
+    border-bottom: 1px solid gray;
+}
+
+/*
+    DEMO STYLE
+*/
+body {
+    background: #fafafa;
+}
+
+.navbar {
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+.wrapper {
+    display: flex;
+    width: 100%;
+}
+
+#sidebar {
+    margin-top: 50px;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 999;
+    background: #f0f0f0;
+    color: #000000;
+    transition: all 0.3s;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+    margin-top: 50px;
+    width: calc(100% - 250px);
+    min-height: 100vh;
+    transition: all 0.3s;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#content.active {
+    width: 100%;
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #content {
+        width: 100%;
+    }
+    #content.active {
+        width: calc(100% - 250px);
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+}

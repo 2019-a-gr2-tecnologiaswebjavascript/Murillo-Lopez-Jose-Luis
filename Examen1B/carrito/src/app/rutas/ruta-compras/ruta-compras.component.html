@@ -1,0 +1,31 @@
+<div>
+  <input type="text" id="busqueda" (keyup)="search()" placeholder="Buscar por nombre">
+
+  <table id="tabla">
+      <tr>
+          <th>Nombre</th>
+          <th>RUC/Cedula</th>
+          <th>Dirección</th>
+          <th>Telefono</th>
+          <th>Correo</th>
+          <th>Cajero</th>
+          <th>Detalle</th>
+          <th>Monto</th>
+      </tr>
+      <tr *ngFor="let item of ventas">
+          <td>{{item.cliente[0].nombre}}</td>
+          <td>{{item.cliente[0].ci}}</td>
+          <td>{{item.cliente[0].direccion}}</td>
+          <td>{{item.cliente[0].telefono}}</td>
+          <td>{{item.cliente[0].correo}}</td>
+          <td>{{item.cajero}}</td>
+          <td>
+            <p *ngFor="let prod of item.pedido[0].carrito">
+              {{prod.nombre}}
+            </p>
+          </td>
+          <td>{{item.pedido[0].precioTotal}}</td>
+      </tr>
+  </table>
+
+</div>

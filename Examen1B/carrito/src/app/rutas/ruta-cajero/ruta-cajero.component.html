@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+      <form
+        #formularioUsuario="ngForm"
+        novalidate
+      > 
+        <label for="nombre"></label>
+        <input id="nombre" name="nombreUsuario" type="text" placeholder="Nombre" [(ngModel)]="nombre">
+        <label for="ci"></label>
+        <input id="ci" name="ciUsuario" type="text" placeholder="RUC/Cedula" [(ngModel)]="ci">
+        <label for="direccion"></label>
+        <input id="direccion" name="direccionUsuario" type="text" placeholder="Direccion" [(ngModel)]="direccion">
+        <label for="telefono"></label>
+        <input id="telefono" name="telefonoUsuario" type="text" placeholder="Telefono" [(ngModel)]="telefono">
+        <label for="correo"></label>
+        <input id="correo" name="correoUsuario" type="text" placeholder="Correo" [(ngModel)]="correo">
+        <div class="row" *ngFor="let item of carrito">
+          <div class="col-lg-2">
+            {{item.cantidad}}
+          </div>
+          <div class="col-lg-8">
+            {{item.producto.nombre}}
+          </div>
+          <div class="col-lg-2">
+            <button (click)="quitarDelCarrito(item.producto)">-</button>
+          </div>
+        </div>
+        <button (click)="finalizarCompra()">Finalizar</button>
+      </form>
+    </div>
+    <div class="col-lg-6">
+      <div class="row">
+        Cajero: {{nombreUsuario}}
+      </div>
+      <div class="row">
+        Total: {{costoTotal.precioTotal}}
+      </div>
+      <div class="row" *ngFor="let producto of productos">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8">
+          {{producto.nombre}}
+        </div>
+        <div class="col-lg-2">
+          <button (click)="agregarAlCarrito(producto)">+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="div">
+  <form
+    #formularioUsuario="ngForm"
+    novalidate
+  >
+    <label for="nombre"></label>
+    <input id="nombre" name="nombreUsuario" type="text" placeholder="Nombre" [(ngModel)]="nombre">
+  </form>
+  <button (click)="login()">Entrar</button>
+</div>

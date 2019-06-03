@@ -4,6 +4,10 @@
     border-bottom: 1px gray solid;
 }
 
+.expanded-sidebar{
+    height: 100%;
+}
+
 .center-align{
     text-align:center; 
     vertical-align: middle;
@@ -12,18 +16,6 @@
 .left-align{
     text-align: left;
     vertical-align: middle;
-}
-
-.table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-  
-td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
 }
 
 .item-list{
@@ -58,12 +50,14 @@ td, th {
     margin-bottom: 5px;
     margin-top: 5px;
     font-weight: bold;
+    padding-left: 2%;
 }
 
 .video-cell{
-    margin:5px;
+    margin: 5px;
 }
 
 .video-info{
     color : gray;
+    padding-left: 2%;
 }

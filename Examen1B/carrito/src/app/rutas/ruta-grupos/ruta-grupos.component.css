@@ -1,0 +1,39 @@
+div {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -400px;
+  }
+
+#tabla{
+    border: 1px solid black;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#tabla th, #tabla td{
+    text-align: left;
+    padding: 12px;
+}
+
+#tabla tr{
+    border-bottom: 1px solid black;
+}
+
+#busqueda{
+    width: 72%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid black;
+    margin-bottom: 12px;
+}
+
+#boton{
+    width: 25%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid black;
+    margin-bottom: 12px;
+    margin-left: 3%;
+}

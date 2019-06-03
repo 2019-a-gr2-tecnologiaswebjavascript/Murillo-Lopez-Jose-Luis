@@ -1,3 +1,275 @@
+  <div class="contenedor ">
+    <div class="row header fixed-top">
 
+      <div class="col-sm-2 my-auto">
+        <div class="row">
+          <div class="col-sm-3">
+            <img src="../assets/img/icons/Hamburger_icon.svg.png" height="30" id="sidebarCollapse" class="tipo-boton">
+          </div>
+          <div class="col-sm-9">
+            <img src="../assets/img/icons/Logo_of_YouTube_(2015-2017).png" alt="youtube-icon" height="30" class="tipo-boton" routerLink="/home">
+          </div>
+        </div>
+      </div>
+        
+      <div class="col-sm-7 my-auto">
+        <div class="row">
+          <div class="col-sm-2"></div>
+          <div class="col-sm-10">
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="width: 85%">
+              <button class="btn btn-outline-light my-2 my-sm-0" type="submit">
+                <img src="../assets/img/icons/search.png" alt="search" height="20">
+              </button>
+            </form>               
+          </div>
+        </div>
+      </div>
+        
+      <div class="col-sm-3  my-auto">
+        <div class="row">
+          <div class="col-sm-2"></div>
+          <div class="col-sm-2">
+            <img src="../assets/img/icons/upload_video.png" alt="upload-video" height="30">
+          </div>
+          <div class="col-sm-2">
+            <img src="../assets/img/icons/apps.png" alt="apps" height="30">
+          </div>
+          <div class="col-sm-2">
+            <img src="../assets/img/icons/messages.png" alt="messages" height="30">
+          </div>
+          <div class="col-sm-2">
+            <img src="../assets/img/icons/notifications.png" alt="notifications" height="30">
+          </div>
+          <div class="col-sm-2">
+            <div class="row justify-content-lg-center">
+              <img src="../assets/img/icons/user.png" alt="user" height="30" (click)="log()">
+            </div>
+          </div>
+        </div>
+      </div>
+        
+    </div>
 
-<router-outlet></router-outlet>
+    <div class="row">
+      <div class="wrapper">
+          <nav id="sidebar">
+            <div class="col-lg-12 list">
+                <div class="row section">
+                    <div class="col-lg-12">
+                      <div class="row item-list" routerLink="/home">
+                        <div class="col-md-3 align-self-center">
+                          <img src="../assets/img/icons/home.png" alt="home" height="30">
+                        </div>
+                        <div class="col-md-9 align-self-center">
+                            Inicio
+                        </div>
+                      </div>
+                      <div class="row item-list" routerLink="/trending">
+                        <div class="col-md-3 align-self-center">
+                          <img src="../assets/img/icons/trending.png" alt="trending" height="30">
+                        </div>
+                        <div class="col-md-9 align-self-center">
+                          Tendencias
+                        </div>
+                      </div>
+                      <div class="row item-list" routerLink="/subscriptions">
+                        <div class="col-md-3 align-self-center">
+                          <img src="../assets/img/icons/subscriptions.png" alt="sub" height="30">
+                        </div>
+                        <div class="col-md-9 align-self-center">
+                          Suscripciones
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="row section">
+                    <div class="col-md-12">
+                        <div class="row item-list">
+                            <div class="col-md-3 align-self-center">
+                              <img src="../assets/img/icons/bib.png" alt="bib" height="30">
+                            </div>
+                            <div class="col-md-9 align-self-center">
+                              Biblioteca
+                            </div>
+                          </div>
+                          <div class="row item-list">
+                              <div class="col-md-3 align-self-center">
+                                <img src="../assets/img/icons/history.png" alt="history" height="30">
+                              </div>
+                              <div class="col-md-9 align-self-center">
+                                Historial
+                              </div>
+                          </div>
+                    </div>
+                </div>
+                <div class="row section center-align item-list-title">
+                    <div class="col-md-12">
+                        Inicia sesión para dar Me gusta a vídeos, añadir comentarios y suscribirte a canales.
+                    </div>
+                </div>
+          
+                <div class="row section">
+                  <div class="col-md-12">
+                    
+                    <div class="row item-list-title">
+                      <div class="col-md-12">
+                        LO MEJOR DE YOUTUBE
+                      </div>
+                    </div>
+          
+                      <div class="row item-list">
+                        <div class="col-md-3 align-self-center">
+                          <img src="../assets/img/icons/music.png" alt="music" height="30">
+                        </div>
+                        <div class="col-md-9 align-self-center">
+                          Música
+                        </div>
+                      </div>
+          
+                      <div class="row item-list">
+                        <div class="col-md-3 align-self-center">
+                          <img src="../assets/img/icons/sports.png" alt="sports" height="30">
+                        </div>
+                        <div class="col-md-9 align-self-center">
+                          Deportes
+                        </div>
+                      </div>
+          
+                      <div class="row item-list">
+                        <div class="col-md-3 align-self-center">
+                          <img src="../assets/img/icons/games.png" alt="games" height="30">
+                        </div>
+                        <div class="col-md-9 align-self-center">
+                          Videojuegos
+                        </div>
+                      </div>
+          
+                      <div class="row item-list">
+                        <div class="col-md-3 align-self-center">
+                          <img src="../assets/img/icons/news.png" alt="news" height="30">
+                        </div>
+                        <div class="col-md-9 align-self-center">
+                          Noticias
+                        </div>
+                      </div>
+          
+                      <div class="row item-list">
+                        <div class="col-md-3 align-self-center">
+                          <img src="../assets/img/icons/live.png" alt="live" height="30">
+                        </div>
+                        <div class="col-md-9 align-self-center">
+                          En directo
+                        </div>
+                      </div>
+          
+                      <div class="row item-list">
+                        <div class="col-md-3 align-self-center">
+                          <img src="../assets/img/icons/360.png" alt="360video" height="30">
+                        </div>
+                        <div class="col-md-9 align-self-center">
+                          Video en 360º
+                        </div>
+                      </div>
+          
+                  </div>
+                </div>
+                
+                <div class="row section">
+                    <div class="col-md-12">
+                  
+                          <div class="row item-list">
+                            <div class="col-md-3 align-self-center">
+                              <img src="../assets/img/icons/browse.png" alt="browse" height="30">
+                            </div>
+                            <div class="col-md-9 align-self-center">
+                              Explorar canales
+                            </div>
+                          </div>
+              
+                      </div>
+                </div>
+          
+                <div class="row section">
+                    <div class="col-md-12">
+                      
+                      <div class="row item-list-title">
+                        <div class="col-md-12">
+                          MÁS DE YOUTUBE
+                        </div>
+                      </div>
+            
+                        <div class="row item-list">
+                          <div class="col-md-3 align-self-center">
+                            <img src="../assets/img/icons/premium.png" alt="premium" height="30">
+                          </div>
+                          <div class="col-md-9 align-self-center">
+                            YouTube Premium
+                          </div>
+                        </div>
+            
+                        <div class="row item-list">
+                          <div class="col-md-3 align-self-center">
+                            <img src="../assets/img/icons/streaming.png" alt="live" height="30">
+                          </div>
+                          <div class="col-md-9 align-self-center">
+                            Directo
+                          </div>
+                        </div>
+            
+                        
+                    </div>
+                  </div>
+          
+                  <div class="row section">
+                      <div class="col-md-12">
+                          <div class="row item-list">
+                            <div class="col-md-3 align-self-center">
+                              <img src="../assets/img/icons/settings.png" alt="settings" height="30">
+                            </div>
+                            <div class="col-md-9 align-self-center">
+                              Configuración
+                            </div>
+                          </div>
+              
+                          <div class="row item-list">
+                            <div class="col-md-3 align-self-center">
+                              <img src="../assets/img/icons/informs.png" alt="informs" height="30">
+                            </div>
+                            <div class="col-md-9 align-self-center">
+                              Historial de informes
+                            </div>
+                          </div>
+          
+                          <div class="row item-list">
+                              <div class="col-md-3 align-self-center">
+                                <img src="../assets/img/icons/help.png" alt="help" height="30">
+                              </div>
+                              <div class="col-md-9 align-self-center">
+                                Ayuda
+                              </div>
+                            </div>
+          
+                            <div class="row item-list">
+                                <div class="col-md-3 align-self-center">
+                                  <img src="../assets/img/icons/suggest.png" alt="suggest" height="30">
+                                </div>
+                                <div class="col-md-9 align-self-center">
+                                  Enviar sugerencias
+                                </div>
+                              </div>  
+                      </div>
+                    </div>
+              </div>
+          </nav>
+      
+          <div id="content">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+    </div>
+      
+  </div>
+  
+
+    

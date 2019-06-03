@@ -1,0 +1,15 @@
+.video-titles{
+    margin-bottom: 5px;
+    margin-top: 5px;
+    font-weight: bold;
+    padding-left: 2%;
+}
+
+.video-cell{
+    margin: 5px;
+}
+
+.video-info{
+    color : gray;
+    padding-left: 2%;
+}
