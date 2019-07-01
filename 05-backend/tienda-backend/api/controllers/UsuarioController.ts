@@ -44,14 +44,21 @@ module.exports = {
     },
 
     upload : (req, res) => {
+
+        const parametros = req.allParams
+
         const opcionesDeCarga = {
             maxBytes : 10000000,
             dirname : __dirname + '/../../archivos',
         }
-        req.file('imagen')
+
+        if (parametros.idProducto){
+
+            req.file('imagen')
             .upload(
                 opcionesDeCarga,
-                (error, archivosSubidos) =>{
+                async (error, archivosSubidos) =>{
+                    console.log('dehdehde')
                     if(error){
                         return res.serverError({
                             error : 500,
@@ -66,12 +73,74 @@ module.exports = {
                         })
                     }else {
                         console.log(archivosSubidos)
+                        try{
+                            const respuestaActualizar = await Producto.updateOne(
+                                {
+                                    id : parametros.idProducto
+                                }).set(
+                                    {
+                                        imagenFD : archivosSubidos[0].fd
+                                    }
+                                )
+                        }catch(e){
+                            return res.serverError({
+                                error: 500,
+                                mensaje : 'Error del servidor'
+                            })
+                        }
                         return res.ok({
                             mensaje : 'ok'
                         })
                     }
                 }
             )
+
+        }else{
+            return res.serverError({
+                error : 400,
+                mensaje : 'No envía ID del producto'
+            })
+        }
+    },
+
+    download : async (req, res) => {
+        const parametros = req.allParams
+        if(parametros.idProducto){
+
+            try{
+                const productoEncontrado = await Producto.findOne({
+                    id : parametros.idProductp
+                })
+                if(!productoEncontrado){
+                    return res.badRequest({
+                        error : 400,
+                        mensaje : 'No existe el producto'
+                    })
+                }else{
+                    if(productoEncontrado.imagenFD){
+                        res.set('Content-disposition')
+                        
+                        return res.download(
+                            productoEncontrado.imagenFD
+                        )
+
+                    }else{
+                        return res.badRequest({
+                            error : 400,
+                            mensaje : 'No existe el FD'
+                        })
+                    }
+                }
+            }catch(e){
+                return
+            }
+
+        }else{
+            return res.serverError({
+                error : 500,
+                mensaje : 'No envía el ID del producto'
+            })
+        }
     }
 
 };

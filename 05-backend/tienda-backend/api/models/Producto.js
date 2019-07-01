@@ -20,6 +20,9 @@ module.exports = {
     arregloProductosUsuario : {
       collection : 'ProductoUsuario',
       via : 'fkProducto'
+    },
+    imagenFD: {
+      type : 'string'
     }
 
   },
