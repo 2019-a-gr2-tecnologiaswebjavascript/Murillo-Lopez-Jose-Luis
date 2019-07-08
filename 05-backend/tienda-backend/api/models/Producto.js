@@ -10,7 +10,7 @@ module.exports = {
   attributes: {
     nombre : {
       type : 'string',
-      required : true
+      required : true 
     },
     codigo : {
       type : 'string',
@@ -20,6 +20,9 @@ module.exports = {
     arregloProductosUsuario : {
       collection : 'ProductoUsuario',
       via : 'fkProducto'
+    },
+    imagenFD: {
+      type : 'string'
     }
 
   },
