@@ -27,14 +27,11 @@ export class AppComponent implements OnInit {
     listaTiendas$.subscribe(
       (lista) => {
         this.listaTiendas = lista
-        console.log(this.listaTiendas)
-        console.log('sds')
       },
       (error) => {
         console.log(error)
       }
     )
-    console.log(this.listaTiendas)
   }
   
   title = 'tienda-front';

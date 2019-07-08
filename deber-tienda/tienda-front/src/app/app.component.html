@@ -1,10 +1,9 @@
-<div class="contenedor">
+<div class="container">
   <div class="row">
     <h1>Tienda con backend</h1>
   </div>
-  <div class="row">
-      <app-carrito></app-carrito>
-  </div>
+
+  <app-carrito class="row"></app-carrito>
   
   <app-tienda class="row"
     *ngFor = "let tienda of listaTiendas"
