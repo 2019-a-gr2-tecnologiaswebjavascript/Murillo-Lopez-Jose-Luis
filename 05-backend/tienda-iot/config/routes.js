@@ -10,19 +10,10 @@
 
 module.exports.routes = {
 
-  '/': { view: 'pages/homepage' },
-  'GET /holaMundo' :{
-    action: 'usuario/saludar'
-  },
-  'POST /cargarArchivo/:idProducto': {
-    action: 'usuario/upload'
-  },
-  'GET /download/:idProducto' : {
-    action : 'usuario/download'
-  },
-  'POST /prenderLed/:idLed' : {
-    action : 'led/encenderLed'
-  }
 
+  '/': { view: 'pages/homepage' },
+  'POST /sensor/encenderLed': {
+    action: 'sensor/encenderLed'
+  }
 
 };
