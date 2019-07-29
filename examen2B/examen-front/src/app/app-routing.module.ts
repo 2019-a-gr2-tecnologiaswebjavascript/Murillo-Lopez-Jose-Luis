@@ -27,9 +27,31 @@ const routes: Routes = [
     canActivate : [GuardService], 
     loadChildren: () => import('./authors/authors.module').then(m => m.AuthorsPageModule)
   },
-  { path: 'books', loadChildren: './authors/books/books.module#BooksPageModule' },
-  { path: 'shop', loadChildren: './shop/shop.module#ShopPageModule' },
-  { path: 'bills', loadChildren: './bills/bills.module#BillsPageModule' }
+  { 
+    path: 'books',
+    canActivate : [GuardService], 
+    loadChildren: './authors/books/books.module#BooksPageModule' 
+  },
+  { 
+    path: 'shop',
+    canActivate : [GuardService], 
+    loadChildren: './shop/shop.module#ShopPageModule' 
+  },
+  { 
+    path: 'bills', 
+    canActivate : [GuardService],
+    loadChildren: './bills/bills.module#BillsPageModule' 
+  },
+  { 
+    path: 'new-author', 
+    canActivate : [GuardService],
+    loadChildren: './authors/new-author/new-author.module#NewAuthorPageModule' 
+  },
+  { 
+    path: 'new-book', 
+    canActivate : [GuardService],
+    loadChildren: './authors/books/new-book/new-book.module#NewBookPageModule' 
+  }
 ];
 
 @NgModule({

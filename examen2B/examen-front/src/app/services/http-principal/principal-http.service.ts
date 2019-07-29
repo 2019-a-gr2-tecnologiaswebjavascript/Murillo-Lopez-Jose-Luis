@@ -70,14 +70,14 @@ export class PrincipalHttpService<ClaseEntidad> {
             )
     }
 
-    buscarTodos() : Observable<ClaseEntidad> {
+    buscarTodos() : Observable<ClaseEntidad[]> {
         const url = `${this.url}${this.modelo}`
         return this.httpClient
             .get(url)
             .pipe(
                 map(
                     (datos) => {
-                        return datos as ClaseEntidad
+                        return datos as ClaseEntidad[]
                     }
                 )
             )

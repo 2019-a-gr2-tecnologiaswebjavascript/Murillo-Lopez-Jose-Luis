@@ -7,5 +7,5 @@ export interface Author {
     birthDate : string
     numberBooks : number
     ecuatorian : boolean
-    books : any[]
+    books? : any[]
 }
