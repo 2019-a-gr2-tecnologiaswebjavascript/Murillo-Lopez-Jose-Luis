@@ -1,0 +1,12 @@
+import { Author } from './Author';
+
+export interface Book {
+    createdAt?: number
+    updatedAt?: number
+    id?: number
+    icbn : number
+    name : string
+    pageNumber : number
+    editorialName : string
+    author_FK? : number | Author | any
+}
