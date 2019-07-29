@@ -8,5 +8,7 @@ export interface Book {
     name : string
     pageNumber : number
     editorialName : string
+    publicationDate: string
+    edition : number
     author_FK? : number | Author | any
 }

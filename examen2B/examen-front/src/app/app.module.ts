@@ -14,6 +14,11 @@ import { GuardService } from './services/guard/guard.service';
 import { PrincipalHttpService } from './services/http-principal/principal-http.service';
 import { UserHttpService } from './services/user-http/user-http.service';
 import { PipesModule } from './pipes/pipes.module';
+import { AuthorHttpService } from './services/author-http/author-http.service';
+import { BookHttpService } from './services/book-http/book-http.service';
+import { SessionService } from './services/session/session.service';
+import { ShopCartService } from './services/shop-cart/shop-cart.service';
+import { BillHttpService } from './services/bill-http/bill-http.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -32,7 +37,12 @@ import { PipesModule } from './pipes/pipes.module';
     IsLoggedService,
     GuardService,
     UserHttpService,
-    PrincipalHttpService
+    PrincipalHttpService,
+    AuthorHttpService,
+    BookHttpService,
+    SessionService,
+    ShopCartService,
+    BillHttpService
   ],
   bootstrap: [AppComponent]
 })

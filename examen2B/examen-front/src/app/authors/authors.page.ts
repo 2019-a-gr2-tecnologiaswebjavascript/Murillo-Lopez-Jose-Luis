@@ -3,6 +3,7 @@ import { ActionSheetController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { Author } from '../dto/Author';
 import { AuthorHttpService } from '../services/author-http/author-http.service';
+import { SessionService } from '../services/session/session.service';
 
 
 @Component({
@@ -20,10 +21,9 @@ export class AuthorsPage implements OnInit {
       header: `${this.authors[index].names} ${this.authors[index].lastNames}`,
       buttons: [{
         text: 'Borrar',
-        role: 'destructive',
         icon: 'trash',
         handler: () => {
-          console.log('Delete clicked');
+          this.delete(index)
         }
       }, {
         text: 'Ver libros',
@@ -34,10 +34,7 @@ export class AuthorsPage implements OnInit {
       }, {
         text: 'Cancelar',
         icon: 'close',
-        role: 'cancel',
-        handler: () => {
-          console.log('Cancel clicked');
-        }
+        role: 'cancel'
       }]
     });
     await actionSheet.present();
@@ -54,24 +51,23 @@ export class AuthorsPage implements OnInit {
 
   constructor(public actionSheetController: ActionSheetController,
     private readonly _router : Router,
-    private readonly _autorHttp : AuthorHttpService) {
+    private readonly _session : SessionService,
+    private readonly _authorHttp : AuthorHttpService) {
 
   }
   
   ngOnInit() {
-    var authors$ = this._autorHttp.buscarTodos()
-    authors$.subscribe(
-      (authorList) => {
-        this.authors = authorList
-      },
-      (error) =>{
-        console.log(error)
-      }
-    )
+    this.authors = this._session.authors
   }
 
   search(event){
     this.searchText = event.detail.value
+  }
+
+  async delete(index){
+    var id = this.authors[index].id
+    await this._authorHttp.borrar(id).toPromise()
+    this._session.authors.splice(index, 1)
   }
 
 }

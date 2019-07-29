@@ -14,7 +14,7 @@
     <form  #form="ngForm" (ngSubmit)="newAuthor(form)">
       <ion-grid>
         <ion-row color="primary" justify-content-center>
-          <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <ion-col align-self-center size-md="10" size-lg="8" size-xs="12">
             <div text-center>
               <h3>Datos del autor</h3>
             </div>
@@ -26,13 +26,14 @@
                 <ion-input id="lastNames" name="LasNames" type="text" placeholder="Apellidos" [(ngModel)]="lastNames" required></ion-input>
               </ion-item>
               <ion-item>
-                  <ion-datetime displayFormat="MM DD YY" placeholder="Select Date" [(ngModel)]="birthDate"></ion-datetime>
-                </ion-item>
+                <ion-datetime [ngModelOptions]="{standalone: true}" displayFormat="DD MMMM YYYY" placeholder="Fecha de nacimiento" [(ngModel)]="birthDate" style="margin-left: -2%"></ion-datetime>
+              </ion-item>
               <ion-item>
                 <ion-input id="numberBooks" name="numberBooks" type="number" placeholder="Número de libros" [(ngModel)]="numberBooks" required></ion-input>
               </ion-item>
               <ion-item>
-                <ion-checkbox disabled="true" [(ngModel)]="ecuatorian"></ion-checkbox>
+                <ion-checkbox [(ngModel)]="ecuatorian" [ngModelOptions]="{standalone: true}" placeholder=""></ion-checkbox>
+                <p style="margin-left: 2%">¿Ecuatoriano?</p>
               </ion-item>
             </div>
             <div padding>

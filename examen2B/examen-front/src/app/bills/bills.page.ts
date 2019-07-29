@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Bill } from '../dto/Bill';
+import { BillHttpService } from '../services/bill-http/bill-http.service';
+import { SessionService } from '../services/session/session.service';
 
 @Component({
   selector: 'app-bills',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BillsPage implements OnInit {
 
-  constructor() { }
+  bills : Bill[] = []
+  searchText = ''
+
+  constructor(private readonly _session: SessionService) { }
 
   ngOnInit() {
+    this.bills = this._session.bills
+  }
+
+  search(event){
+    this.searchText = event.detail.value
   }
 
 }
