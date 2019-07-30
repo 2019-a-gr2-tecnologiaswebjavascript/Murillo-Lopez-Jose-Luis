@@ -21,7 +21,7 @@ export class RutaCajeroComponent implements OnInit {
 
   carrito = this._carrito.detalleCarrito
   productos = this._libros.libros
-
+ 
   costoTotal = this._carrito.costoTotal[0]
 
   constructor(private readonly _libros : LibrosServiceService,

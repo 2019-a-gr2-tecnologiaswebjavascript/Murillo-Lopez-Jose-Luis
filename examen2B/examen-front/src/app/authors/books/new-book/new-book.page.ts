@@ -42,7 +42,6 @@ export class NewBookPage implements OnInit {
       publicationDate : this.publicationDate.substring(0,10),
       edition : this.edition
     }
-    console.log(body)
     try{
       const newAuthor$ = await this._bookHttp
         .crear(body)

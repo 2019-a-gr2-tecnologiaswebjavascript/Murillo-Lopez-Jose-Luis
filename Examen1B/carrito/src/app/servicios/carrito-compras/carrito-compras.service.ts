@@ -89,7 +89,6 @@ export class CarritoComprasService {
         'cajero':cajero
       }
     ]
-    console.log(venta)
     this._ventas.ventas.push(venta)
   }
 
